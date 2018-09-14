@@ -2,7 +2,9 @@ package applications;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -13,9 +15,9 @@ public class Application {
         return "Hello Docker World TEST 2";
     }
     
-    @RequestMapping("/pong")
+    @RequestMapping(value="/pong", produces = MediaType.APPLICATION_JSON_VALUE,  method = RequestMethod.GET)
     public String pong() {
-        return "Pong!";
+    	return "Pong!";
     }
 
     public static void main(String[] args) {

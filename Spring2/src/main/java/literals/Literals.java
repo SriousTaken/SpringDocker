@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class Literals {
 
-	String clusterIP = "192.168.99.100";
+	final String CLUSTER_IP = "192.168.99.100";
 	
-	String port = "30126";
+	final String PORT = "30126";
 	
-	Map<String, String> port_comm_partners = initialize_port_comm_partners();
+	final Map<String, String> PORTS_COMM_PARTNERS = initialize_ports_comm_partners();
 	
-	private Map<String, String> initialize_port_comm_partners() {
+	private Map<String, String> initialize_ports_comm_partners() {
 		Map<String, String> port_comm_partners = new HashMap<String, String>();
 		//begin set values
 		port_comm_partners.put("Spring1", "30125");
