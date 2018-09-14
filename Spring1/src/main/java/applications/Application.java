@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -61,7 +62,7 @@ public class Application {
         		+ "<li><a href=" + uri + "/alive>Alive Checking Scenario</a></li>"
         		+ "<li>Command Scenario <ul>"
         			+ "<li><a href=" + uri + "/command_fix>Fix command: ls</a></li>"
-        			+ "<li><a href=\" + uri + \"/command_input>Command input</a></li>"
+        			+ "<li><a href=" + uri + "/command_input>Command input</a></li>"
         			+ "</ul>"
         		+"<ul>";
     }
@@ -85,6 +86,24 @@ public class Application {
     @RequestMapping("/command_fix")
     public String command() {
     	CommandExecutioner commandExecutioner = new CommandExecutioner("ls", System.getProperty("user.home"));
+    	return commandExecutioner.execute();
+    }
+    
+    /**
+     * @return Gives an instruction on how to use the command input features
+     */
+    @RequestMapping("/command_input")
+    public String command_input_instruction() {
+    	return "Input your command to execute in the URL in the form of .../command_input/{command}!";
+    }
+    
+    /**
+     * Executes a command given by the user on the on the docker the Spring web application is running on
+     * @return String representing the result of the executed command
+     */
+    @RequestMapping("/command_input/{command}")
+    public String command_input(@PathVariable String command) {
+    	CommandExecutioner commandExecutioner = new CommandExecutioner(command, System.getProperty("user.home"));
     	return commandExecutioner.execute();
     }
 }
