@@ -9,6 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 import literals.Literals;
 
+/**
+ * Provides all Spring web application sites related to health checks
+ * @author Kevin Kassin
+ */
 @RestController
 public class HealthCheckController {
 	

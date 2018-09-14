@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import literals.Literals;
 
+/**
+ * Provides index site of the Spring web application
+ * @author Kevin Kassin
+ */
 @Controller
 public class IndexController {
 

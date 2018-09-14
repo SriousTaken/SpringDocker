@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import literals.Literals;
 import util.CommandExecutioner;
 
+/**
+ * Provides all Spring web application sites related to commands
+ * @author Kevin Kassin
+ */
 @RestController
 public class CommandController {
 	

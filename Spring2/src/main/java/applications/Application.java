@@ -2,24 +2,17 @@ package applications;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Defines a Spring web application using Rest calls
+ * @author Kevin Kassin
+ */
 @SpringBootApplication
-@RestController
-public class Application {
-	@RequestMapping("/")
-    public String home() {
-        return "Hello Docker World TEST 2";
-    }
-    
-    @RequestMapping(value="/pong", produces = MediaType.APPLICATION_JSON_VALUE,  method = RequestMethod.GET)
-    public String pong() {
-    	return "Pong!";
-    }
-
+public class Application {  
+	
+	/**
+	 * Runs the Spring web application
+	 */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }   
