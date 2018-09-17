@@ -26,7 +26,7 @@ public class IndexController {
 	 * @throws IOException 
 	 */
 	@GetMapping("/")
-    public String index(Model model) throws IOException {
+    public String index(Model model) {
 		model.addAttribute("app_id",literals.App_ID);
 		model.addAttribute("address", literals.CLUSTER_IP + ":" + literals.PORT);
 		return "start";
