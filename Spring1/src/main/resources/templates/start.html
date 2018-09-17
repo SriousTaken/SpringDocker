@@ -7,6 +7,7 @@
 	<body>
 		<h1>Spring Application on Docker</h1>
 	    <p th:text="'This is Spring Application ' + ${app_id} + '.'" />
+	    <p th:text="'Its address is ' + ${address} + '.'" />
 		<ul>
 			<li><a th:href="@{'http://' + ${address} + '/ping'}">Ping Pong Scenario</a></li>
 			<li><a th:href="@{'http://' + ${address} + '/alive'}">Alive Checking Scenario</a></li>
