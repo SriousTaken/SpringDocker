@@ -1,4 +1,8 @@
 cd Docker1
-./start_spring1_docker.sh
+./start_docker.sh
 cd ../Docker2
-./start_spring2_docker.sh
+./start_docker.sh
+cd ../Docker3
+./start_docker.sh
+cd ../Docker4
+./start_docker.sh

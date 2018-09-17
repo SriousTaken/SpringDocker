@@ -1,9 +1,8 @@
-cd Spring1
-./mvnw package 
-cp target/gs-spring-boot-docker-0.1.0.jar ../Docker1/docker.jar
-cd ..
-cd Spring2
-./mvnw package 
-cp target/gs-spring-boot-docker-0.1.0.jar ../Docker2/docker.jar
-
-
+cd Docker1
+./create_jar.sh
+cd ../Docker2
+./create_jar.sh
+cd ../Docker3
+./create_jar.sh
+cd ../Docker4
+./create_jar.sh
